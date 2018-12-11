@@ -1,32 +1,41 @@
 /* Crystal Collector CSS */
 
 body {
-    background-image: url("../images/goldBg.jpg");
+    background-image: url("../images/dewdrop2Bg.jpeg");
 }
+
+.jumbotron {
+    background: rgb(75,172,191); /* for browsers without RGBA support */
+    background: rgba(75,172,191,0.25);
+    color: white;
+}
+
 h1 {
     font-family: 'Charmonman', cursive;
     text-align: center;
+    color: white;
 
 }
 
 h2{
     font-family: 'Charmonman', sans-serif;
     font-size: 30px;
+    color: white;
 }
 
 p {
     font-family: 'Poppins', sans-serif;
+    color: white;
 }
 
-#crystal1,
-#crystal2,
-#crystal3 {
 
-}
 
 #btn {
     font-family: 'Charmonman', sans-serif;
     font-size: 25px;
+    background: rgb(75,172,191); /* for browsers without RGBA support */
+    background: rgba(75,172,191,0.9);
+   
 }
 
 .target-number {
@@ -39,6 +48,21 @@ p {
 .scoreboard {
     font-family: 'Poppins', sans-serif;
     font-size: 20px;
+    color: white;
    
 }
 
+#crystal1,
+#crystal2,
+#crystal3,
+#crystal4 {
+    padding-top: 40px;
+    
+}
+
+.card {
+    color: white;
+    background: rgb(75,172,191); /* for browsers without RGBA support */
+    background: rgba(75,172,191,0.9);
+    
+}
