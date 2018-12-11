@@ -1,23 +1,8 @@
-// Crystal Guess Pseudocode
-
-
-
-
-
-//when the player clicks on a crystal...
-    //create on click event for each crystal
-        //on click, add the random assigned to each crystal to the user point total
-        //the amount assigned to each crystal will remain hidden, but will update the score total appropriately
-
-        
-//player wins if their total score matches the random number
-//player loses if their score goes above random number
-//the game restarts when the player wins or loses
-//new game = new random number and new random crystal numbers
-//display number of games the player wins and loses
+// Crystal Guess JS and jQuery
 
 $( document).ready(function() {
-    
+
+//---------------------------------------------------------------------------//
 
 //create youWin and youLose variables
     var youWin = false;
@@ -44,18 +29,18 @@ $( document).ready(function() {
     var crystal3Num
 
 
+//---------------------------------------------------------------------------//
+
+//on button click, instructions slide up
+$("#btn").click(function() {
+    $(".instructions").slideToggle();
+});
 
 //start game
     //get target number
         getTargetNumber();
     //get crystal numbers
         getCrystalNumbers();
- 
-
-//onclick, instructions slide up
-    $("#btn").click(function() {
-        $(".instructions").slideToggle();
-    });
 
 //display target number
     $("#target-number").text("Target Number: " + targetNumber);
@@ -65,55 +50,59 @@ $( document).ready(function() {
     $("#wins").text("Wins: " + wins);
     $("#losses").text("Losses: " + losses);
 
-
-
-    //generate random number
+//generate target number
     function getTargetNumber() {
         targetNumber = Math.floor(Math.random() * (190-19)) + 19; 
     }
    
-    //generate crystal numbers
+//generate crystal numbers
     function getCrystalNumbers() {
         crystal1Num = Math.floor(Math.random() * (12-1)) + 1; 
         crystal2Num = Math.floor(Math.random() * (12-1)) + 1; 
         crystal3Num = Math.floor(Math.random() * (12-1)) + 1;  
         }
+
+//reset game
+    var reset
+    function gameReset() {
+        //get new numbers
+        getTargetNumber();
+        getCrystalNumbers();
+        //reset counter
+        counter = 0;
+}
     
-    //on click crystal numbers add to current number
-        $("#crystal1").click(function() {
+//on click crystal numbers add to current number
+    $("#crystal1, #crystal2, #crystal3").click(function() {
+        if (youWin || youLose) {
+            $("#crystal1").off("click");
+            //still need to enter reset function to restart game
+        }
+
+        else {
             counter = targetNumber; //easy win
-            // counter = counter + crystal1Num;
+            //counter = counter + crystal1Num;
             $("#current-total").text("Current Total: " + counter);
-        })
+        };
+    });
         
-        $("#crystal2").click(function() {
-            counter = targetNumber + 900; //easy lose
-            // counter = counter + crystal2Num;
-            $("#current-total").text("Current Total: " + counter);
-        });
+    //on any crystal click, check for wins or losses & execute win/loss functions
+        $("#crystal1, #crystal2, #crystal3").click(function() {
 
-        $("#crystal3").click(function() {
-            counter = counter + crystal3Num;
-            $("#current-total").text("Current Total: " + counter);
-        });
-    
-    do {
-        if (counter === targetNumber) {
-            youWin = true;
-            wins++;
-            $("#wins").text("Wins: " + wins);
-            $("#youWin").text("You've won!  You're awesome!");
-        };
+                if (counter === targetNumber) {
+                    youWin = true;
+                    wins++;
+                    $("#wins").text("Wins: " + wins);
+                    $("#youWin").text("You've won!  You're awesome!");
+                };
 
-        if (counter > targetNumber) {
-            youLose = true;
-            losses++;
-            $("#losses").text("Losses: " + losses);
-            $("#youLose").text("You've lost.  Lame.");
-        };
-
-    } while (
-    
+                if (counter > targetNumber) {
+                    youLose = true;
+                    losses++;
+                    $("#losses").text("Losses: " + losses);
+                    $("#youLose").text("You've lost.  Lame.");
+                };
+            });
 
     });
       
