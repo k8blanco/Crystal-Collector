@@ -1,0 +1,44 @@
+/* Crystal Collector CSS */
+
+body {
+    background-image: url("../images/crystalBg.jpg");
+}
+h1 {
+    font-family: 'Charmonman', cursive;
+    text-align: center;
+
+}
+
+h2{
+    font-family: 'Charmonman', sans-serif;
+    font-size: 30px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+#crystal1,
+#crystal2,
+#crystal3 {
+
+}
+
+#btn {
+    font-family: 'Charmonman', sans-serif;
+    font-size: 25px;
+}
+
+.target-number {
+    padding: 20px;
+    margin-left: 20px;
+    
+
+}
+
+.scoreboard {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+   
+}
+
