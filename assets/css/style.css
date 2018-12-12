@@ -26,6 +26,8 @@ h2{
 p {
     font-family: 'Poppins', sans-serif;
     color: white;
+    text-align: center;
+    font-size: 20px;
 }
 
 
@@ -35,7 +37,11 @@ p {
     font-size: 25px;
     background: rgb(75,172,191); /* for browsers without RGBA support */
     background: rgba(75,172,191,0.9);
-   
+}
+
+#hint {
+    font-family: 'Charmonman', sans-serif;
+    font-size: 20px;
 }
 
 .target-number {
@@ -66,3 +72,4 @@ p {
     background: rgba(75,172,191,0.9);
     
 }
+

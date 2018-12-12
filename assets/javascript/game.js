@@ -45,10 +45,15 @@ $("#btn").click(function() {
 //display target number
     $("#target-number").text("Target Number: " + targetNumber);
 
+//update display function
+    function updateDisplay() {
+        $("#current-total").text("Current Total: " + counter);
+        $("#wins").text("Wins: " + wins);
+        $("#losses").text("Losses: " + losses);
+    };
+
 //display scoreboard
-    $("#current-total").text("Current Total: " + counter);
-    $("#wins").text("Wins: " + wins);
-    $("#losses").text("Losses: " + losses);
+    updateDisplay();
 
 //generate target number
     function getTargetNumber() {
@@ -60,40 +65,61 @@ $("#btn").click(function() {
         crystal1Num = Math.floor(Math.random() * (12-1)) + 1; 
         crystal2Num = Math.floor(Math.random() * (12-1)) + 1; 
         crystal3Num = Math.floor(Math.random() * (12-1)) + 1;  
+        crystal4Num = Math.floor(Math.random() * (12-1)) + 1;
         }
 
 //reset game
-    var reset
     function gameReset() {
-        //get new numbers
+        //new target number
         getTargetNumber();
+        //new crystal numbers
         getCrystalNumbers();
-        //reset counter
         counter = 0;
-}
+        //reset display
+        updateDisplay();
+        //display new target number
+        $("#target-number").text("Target Number: " + targetNumber);
+        youWin = false;
+        youLose = false;
+    };
     
 //on click crystal numbers add to current number
-    $("#crystal1, #crystal2, #crystal3").click(function() {
-        if (youWin || youLose) {
-            $("#crystal1").off("click");
-            //still need to enter reset function to restart game
-        }
-
-        else {
-            counter = targetNumber; //easy win
-            //counter = counter + crystal1Num;
-            $("#current-total").text("Current Total: " + counter);
-        };
-    });
+    $("#crystal1, #crystal2, #crystal3, #crystal4").click(function() {
+        $("#youLose").text("");
+        $("#youWin").text("");
         
+            if (this.id === "crystal1") {
+                counter = counter + crystal1Num;
+            };
+
+            if (this.id === "crystal2") {
+                counter = counter + crystal2Num;
+            };
+            
+            if (this.id === "crystal3") {
+                counter = counter + crystal3Num;
+            };
+
+            if (this.id === "crystal4") {
+                counter = counter + crystal4Num;
+            };
+            
+            updateDisplay();
+        
+
+    });
+
+
     //on any crystal click, check for wins or losses & execute win/loss functions
-        $("#crystal1, #crystal2, #crystal3").click(function() {
+        $("#crystal1, #crystal2, #crystal3, #crystal4").click(function() {
 
                 if (counter === targetNumber) {
                     youWin = true;
                     wins++;
                     $("#wins").text("Wins: " + wins);
                     $("#youWin").text("You've won!  You're awesome!");
+                    gameReset();
+
                 };
 
                 if (counter > targetNumber) {
@@ -101,6 +127,7 @@ $("#btn").click(function() {
                     losses++;
                     $("#losses").text("Losses: " + losses);
                     $("#youLose").text("You've lost.  Lame.");
+                    gameReset();
                 };
             });
 

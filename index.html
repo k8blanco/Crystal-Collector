@@ -18,51 +18,42 @@
         
         <!-- Jumbotron -->
         <div class="jumbotron">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 class="display-4">Crystal Collector</h1>
-                    </div>
-                </div>
+
+            <div class="col-md-12">
+                <h1 class="display-4">Crystal Collector</h1>
             </div>
+
+            <button type="button" id="btn" class="btn btn-info">Instructions</button>
+           
+            <div class="card instructions">
+                <div class="card-body col-md-12">
+                    <ul>
+                        <li>At the beginning of the game, you will be given a random number.
+                        </li>
+    
+                        <li>Each of the four crystals is worth a different (hidden) number.
+                        </li>
+
+                        <li>Each time you click a crystal, that number will be added to your total score.
+                            </li>
+    
+                        <li>You win by matching your total score to the given number.  You will lose if your number 
+                            exceeds the given number.
+                        </li>
+    
+                        <li id="hint">Hint: Each time the game starts, the crystals will be assigned a new number!
+                        </li> 
+                    </ul> 
+                    </div>
+            </div>
+                
+        </div>
 
 
 
 
  <div class="container">
                 
-                <!-- Instructions -->
-                <div class="row"> 
-                    <div class="col-md-12 offset-2">
-
-                        <div class="col-md-6 offset-3">
-                            <button type="button" id="btn" class="btn btn-info">Instructions</button>
-                        </div>
-
-                            <div class="card instructions" style="width: 50rem;">
-                                <div class="card-body col-md-12">
-
-                                <ul>
-                                    <li>At the beginning of the game, you will be given a random number.
-                                    </li>
-
-                                    <li>Each of the four crystals is worth a different number, which will be hidden until 
-                                    you click on it.  Each time you click on a crystal, that number will be added to your 
-                                    total score.
-                                    </li>
-
-                                    <li>You win by matching your total score to the given number.  You will lose if your number 
-                                    exceeds the given number.
-                                    </li>
-
-                                    <li>Hint: Each time the game starts, the crystals will be assigned a new number!
-                                    </li> 
-                                </ul> 
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
         
      
         <div class="row">
@@ -77,9 +68,8 @@
                 </div>
 
                 <!-- Scoreboard -->
-                <div class="row">
-                        <div class="scoreboard">
-        
+                <div class="row col-md-12 scoreboard">
+
                             <div class>
                                 <h2 id="youWin"></h2>
                                 <h2 id="youLose"></h2>
@@ -90,7 +80,6 @@
                                 <p id="losses"></p>
                             </div>
                         
-                        </div>
                 </div>
 
             </div>
@@ -101,7 +90,7 @@
                 <div class="card-body">
                     <div class=row>
                         
-                        <div class="col-md-3">
+                        <div class="crystal col-md-3">
                             <div id="crystal1">
                                 <img src="assets/images/crystal1.png" alt="Crystal Image" height="150px">
                             </div>
