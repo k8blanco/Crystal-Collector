@@ -14,19 +14,25 @@ h1 {
     font-family: 'Charmonman', cursive;
     text-align: center;
     color: white;
-
 }
 
-h2{
+h2 {
     font-family: 'Charmonman', sans-serif;
     font-size: 30px;
     color: white;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Charmonman', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
 }
 
 p {
     font-family: 'Poppins', sans-serif;
     color: white;
-    text-align: center;
     font-size: 20px;
 }
 
@@ -37,18 +43,29 @@ p {
     font-size: 25px;
     background: rgb(75,172,191); /* for browsers without RGBA support */
     background: rgba(75,172,191,0.9);
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.instructions {
+    display: none;
+}
+
+ol {
+    list-style-type: decimal;
+    padding: 10px;
+    padding-left: 20px;
 }
 
 #hint {
     font-family: 'Charmonman', sans-serif;
     font-size: 20px;
+    text-align: center;
 }
 
 .target-number {
-    padding: 20px;
+    padding: 10px;
     margin-left: 20px;
-    
-
 }
 
 .scoreboard {
@@ -70,6 +87,7 @@ p {
     color: white;
     background: rgb(75,172,191); /* for browsers without RGBA support */
     background: rgba(75,172,191,0.9);
-    
+    padding: 10px;
+    border: 0;
 }
 

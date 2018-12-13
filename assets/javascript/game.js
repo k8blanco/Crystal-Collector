@@ -1,16 +1,11 @@
 // Crystal Guess JS and jQuery
 
-$( document).ready(function() {
 
 //---------------------------------------------------------------------------//
 
 //create youWin and youLose variables
     var youWin = false;
     var youLose = false;
-
-//create variables to hold directions & scoreboard items
-    var youLoseText 
-    var youWinText
 
 //create music variables
     var themeMusic
@@ -31,6 +26,8 @@ $( document).ready(function() {
 
 //---------------------------------------------------------------------------//
 
+$( document).ready(function() {
+
 //on button click, instructions slide up
 $("#btn").click(function() {
     $(".instructions").slideToggle();
@@ -43,13 +40,13 @@ $("#btn").click(function() {
         getCrystalNumbers();
 
 //display target number
-    $("#target-number").text("Target Number: " + targetNumber);
+    $("#target-number").text("Target Number : " + targetNumber);
 
 //update display function
     function updateDisplay() {
-        $("#current-total").text("Current Total: " + counter);
-        $("#wins").text("Wins: " + wins);
-        $("#losses").text("Losses: " + losses);
+        $("#current-total").text("Current Total : " + counter);
+        $("#wins").text("Wins : " + wins);
+        $("#losses").text("Losses : " + losses);
     };
 
 //display scoreboard
@@ -85,8 +82,6 @@ $("#btn").click(function() {
     
 //on click crystal numbers add to current number
     $("#crystal1, #crystal2, #crystal3, #crystal4").click(function() {
-        $("#youLose").text("");
-        $("#youWin").text("");
         
             if (this.id === "crystal1") {
                 counter = counter + crystal1Num;
@@ -116,17 +111,17 @@ $("#btn").click(function() {
                 if (counter === targetNumber) {
                     youWin = true;
                     wins++;
-                    $("#wins").text("Wins: " + wins);
                     $("#youWin").text("You've won!  You're awesome!");
+                    $("#youWin").fadeOut(1000 * 3);
                     gameReset();
-
+                    return;
                 };
 
                 if (counter > targetNumber) {
                     youLose = true;
                     losses++;
-                    $("#losses").text("Losses: " + losses);
                     $("#youLose").text("You've lost.  Lame.");
+                    $("#youLose").fadeOut(1000 * 3);
                     gameReset();
                 };
             });
