@@ -78,6 +78,9 @@ $("#btn").click(function() {
         $("#target-number").text("Target Number: " + targetNumber);
         youWin = false;
         youLose = false;
+        $("#youWin").fadeOut("You've won!  You're awesome!");
+        $("#youLose").fadeOut("You've lost.  Lame.");
+               
     };
     
 //on click crystal numbers add to current number
@@ -99,32 +102,34 @@ $("#btn").click(function() {
                 counter = counter + crystal4Num;
             };
             
+            //after any crystal click, check for wins or losses & execute win/loss functions
+            if (counter === targetNumber) {
+                youWin = true;
+                wins++;
+                $("#youWin").text("You've won!  You're awesome!");
+                    $("#youWin").fadeIn(1000, function(){
+                        $("#youWin").fadeOut(4000)
+                    });
+                gameReset();
+                // return;
+            };
+
+            if (counter > targetNumber) {
+                youLose = true;
+                losses++;
+                $("#youLose").text("You've lost.  Lame.");
+                    $("#youLose").fadeIn(1000, function(){
+                        $("#youLose").fadeOut(4000)
+                    });
+                gameReset();
+                // return;
+            };
+            
             updateDisplay();
         
 
     });
 
-
-    //on any crystal click, check for wins or losses & execute win/loss functions
-        $("#crystal1, #crystal2, #crystal3, #crystal4").click(function() {
-
-                if (counter === targetNumber) {
-                    youWin = true;
-                    wins++;
-                    $("#youWin").text("You've won!  You're awesome!");
-                    $("#youWin").fadeOut(1000 * 3);
-                    gameReset();
-                    return;
-                };
-
-                if (counter > targetNumber) {
-                    youLose = true;
-                    losses++;
-                    $("#youLose").text("You've lost.  Lame.");
-                    $("#youLose").fadeOut(1000 * 3);
-                    gameReset();
-                };
-            });
 
     });
       
