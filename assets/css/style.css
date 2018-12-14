@@ -36,8 +36,6 @@ p {
     font-size: 20px;
 }
 
-
-
 #btn {
     font-family: 'Charmonman', sans-serif;
     font-size: 25px;
@@ -46,6 +44,7 @@ p {
     margin-top: 30px;
     padding: 10px;
 }
+
 
 .instructions {
     display: none;
@@ -89,5 +88,36 @@ ol {
     background: rgba(75,172,191,0.9);
     padding: 10px;
     border: 0;
+    margin-bottom: 100px;
 }
+
+
+.footer {
+    background: rgb(75,172,191); /* for browsers without RGBA support */
+    background: rgba(75,172,191,0.5);
+    padding: 10px;
+    border: 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    height: 50px;
+    font-family: 'Charmonman', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    
+}
+
+.theme-button,
+.pause-button {
+    font-family: 'Charmonman', sans-serif;
+    font-size: 18px;
+    background: rgb(75,172,191); /* for browsers without RGBA support */
+    background: rgba(75,172,191,0.9);
+    margin-top: 0;
+    margin-right: 10px;
+}
+
+
 

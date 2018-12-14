@@ -23,7 +23,18 @@
     var crystal2Num
     var crystal3Num
 
+//gets link for music(theme) and sound effect
+    var themeMusic = document.createElement("audio");
+        themeMusic.setAttribute("src", "assets/sounds/mysticalocean.mp3");
 
+//music(theme) function
+    function playMusic() {
+        themeMusic.play();
+    }
+
+    function pauseMusic() {
+        themeMusic.pause();
+    }
 //---------------------------------------------------------------------------//
 
 $( document).ready(function() {
@@ -78,9 +89,6 @@ $("#btn").click(function() {
         $("#target-number").text("Target Number: " + targetNumber);
         youWin = false;
         youLose = false;
-        $("#youWin").fadeOut("You've won!  You're awesome!");
-        $("#youLose").fadeOut("You've lost.  Lame.");
-               
     };
     
 //on click crystal numbers add to current number
@@ -108,10 +116,9 @@ $("#btn").click(function() {
                 wins++;
                 $("#youWin").text("You've won!  You're awesome!");
                     $("#youWin").fadeIn(1000, function(){
-                        $("#youWin").fadeOut(4000)
+                        $("#youWin").fadeOut(3000)
                     });
                 gameReset();
-                // return;
             };
 
             if (counter > targetNumber) {
@@ -119,10 +126,9 @@ $("#btn").click(function() {
                 losses++;
                 $("#youLose").text("You've lost.  Lame.");
                     $("#youLose").fadeIn(1000, function(){
-                        $("#youLose").fadeOut(4000)
+                        $("#youLose").fadeOut(3000)
                     });
-                gameReset();
-                // return;
+                gameReset();  
             };
             
             updateDisplay();

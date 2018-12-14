@@ -19,16 +19,30 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
 
+            <!--Music Buttons-->
+            <div class="row">
+                <div class="text-center">
+                    <button type="button" class="btn btn-info theme-button" onclick="playMusic()">
+                        <span class="fa fa-music"></span>Play</button>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-info pause-button" onclick="pauseMusic()">
+                        <span class="fa fa-pause"></span>Pause</button>
+                </div>
+            </div>
+
+            <!--Main Title-->
             <div class="col-md-12 row">
                 <h1 class="display-4 col-md-6 offset-3">Crystal Collector</h1>
             </div>
 
+            <!--Instructions-->
             <div class="col-md-2 offset-5 text-center row">
-            <button type="button" id="btn" class="btn btn-info">Instructions</button>
+                <button type="button" id="btn" class="btn btn-info">Instructions</button>
             </div>
            
             <div class="card instructions col-md-6 offset-3">
-                <!-- <div class="card"> -->
                     <ol>
                         <li>At the beginning of the game, you will be given a random number.
                         </li>
@@ -46,15 +60,12 @@
                         <p id="hint">Hint: Each time the game starts, the crystals will be assigned a new number!
                         </p> 
                     </ol> 
-                <!-- </div> -->
             </div>
                 
         </div>
 
 
-
-
- <div class="container">
+<div class="container">
     <div class="row">
 
         <div class="card col-md-5" style="width: 18rem;">
@@ -84,40 +95,53 @@
             </div>
         </div>
    
-            <!-- Crystal Images -->
-            <div class="card col-md-5 offset-2" style="width: 18rem;">
-                <div class="card-body">
-                    <div class=row>
+    <!-- Crystal Images -->
+        <div class="card col-md-5 offset-2" style="width: 18rem;">
+            <div class="card-body">
+                <div class=row>
                         
-                        <div class="crystal col-md-3">
-                            <div id="crystal1">
-                                <img src="assets/images/crystal1.png" alt="Crystal Image" height="110px">
-                            </div>
+                    <div class="crystal col-md-3">
+                        <div id="crystal1">
+                            <img src="assets/images/crystal1.png" alt="Crystal Image" height="110px">
                         </div>
-                
-                        <div class="col-md-3">
-                            <div id="crystal2">
-                                <img src="assets/images/crystal2.png" alt="Crystal Image" height="110px">
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div id="crystal3">
-                                <img src="assets/images/crystal3.png" alt="Crystal Image" height="110px">
-                            </div>
-                        </div>
-
-                        <div class="col-md-3">
-                            <div id="crystal4">
-                                <img src="assets/images/crystal4.png" alt="Crystal Image" height="110px">
-                            </div>
-                        </div>
-
                     </div>
+                
+                    <div class="col-md-3">
+                        <div id="crystal2">
+                            <img src="assets/images/crystal2.png" alt="Crystal Image" height="110px">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div id="crystal3">
+                            <img src="assets/images/crystal3.png" alt="Crystal Image" height="110px">
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div id="crystal4">
+                            <img src="assets/images/crystal4.png" alt="Crystal Image" height="110px">
+                        </div>
+                    </div>
+
                 </div>
             </div>
+        </div>
 
     </div>
+
+<div class="row"></div>
+
+    <!-- Footer -->
+    <div class="row">
+        <footer class="footer col-md-8 offset-2">
+            <div class="container">
+                <span>Game by Katherine White. Music (with thanks) by Eric Matyas www.soundimage.org</span>
+            </div>
+        </footer>
+    </div>
+
+
 </div>
 
 
