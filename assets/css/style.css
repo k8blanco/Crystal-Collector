@@ -114,9 +114,10 @@ ol {
     font-family: 'Charmonman', sans-serif;
     font-size: 18px;
     background: rgb(75,172,191); /* for browsers without RGBA support */
-    background: rgba(75,172,191,0.9);
+    background: rgba(75,172,191,0.25);
     margin-top: 0;
     margin-right: 10px;
+    border: none;
 }
 
 
